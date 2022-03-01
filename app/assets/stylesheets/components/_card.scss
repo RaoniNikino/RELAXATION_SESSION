@@ -1,7 +1,7 @@
 .card-category {
   background-size: cover;
   background-position: center;
-  height: 500px;
+  height: 200px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -14,6 +14,7 @@
 }
 
 .cards {
+  margin-top: 10px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 50px;
