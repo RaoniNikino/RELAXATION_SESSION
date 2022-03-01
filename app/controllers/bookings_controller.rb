@@ -11,9 +11,14 @@ def new
 end
 
 def create
-  @booking = Booking.new(booking_params)
-  @booking.save
-  redirect_to bookings_path
+    @booking = Booking.new(booking_params)
+    @booking.user = current_user
+    authorize @booking
+    if @booking.save
+      redirect_to dashboard_path
+    else
+      render :new
+    end
 end
 
 def delete
