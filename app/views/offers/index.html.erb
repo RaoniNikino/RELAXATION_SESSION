@@ -21,3 +21,7 @@
     <% end %>
   </div>
 </div>
+
+<% if policy(Offer).new? %>
+  <%= link_to 'New Offer', new_offer_path %>
+<% end %>
