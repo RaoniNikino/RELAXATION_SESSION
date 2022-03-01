@@ -12,7 +12,6 @@
           <div>
             <h2><%= offer.name %></h2>
           <p><%= offer.description %></p>
-          <%= link_to 'Details', offer_path(offer) %>
           </div>
         </div>
         <h2 class="offer-card-pricing">£99.99</h2>
@@ -26,6 +25,3 @@
 <% if policy(Offer).new? %>
   <%= link_to 'New Offer', new_offer_path %>
 <% end %>
-
-
-
