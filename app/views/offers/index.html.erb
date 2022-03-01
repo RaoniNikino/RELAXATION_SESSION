@@ -1,5 +1,23 @@
-<ul>
-  <% @offers.each do |offer| %>
-    <li><%= offer.name %></li>
-  <% end %>
-</ul>
+<div class="container mt-3">
+  <div class="row">
+    <div class="col-12">
+      <h1>Relaxation Offers</h1>
+    </div>
+  </div>
+
+
+<div class="row">
+    <% @offers.each do |offer| %>
+      <div class="col-4">
+        <div class="offer-card">
+          <div class="offer-card-content">
+            <div class="offer-card-title">
+              <h4><%= offer.name %></h4>
+            </div>
+            <p><%= offer.description %></p>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
