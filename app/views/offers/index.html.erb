@@ -1,5 +1,10 @@
+
 <ul>
   <% @offers.each do |offer| %>
     <li><%= offer.name %></li>
   <% end %>
 </ul>
+
+<% if policy(Offer).new? %>
+  <%= link_to 'New Offer', new_offer_path %>
+<% end %>
