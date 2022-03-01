@@ -1,2 +1,43 @@
 // Import page-specific CSS files here.
 @import "home";
+
+.offer-card {
+    overflow: hidden;
+    background: white;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    margin-bottom: 15px;
+  }
+  
+  .offer-card > img {
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+  }
+  
+  .offer-card h2 {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0;
+  }
+  
+  .offer-card p {
+    font-size: 12px;
+    opacity: .7;
+    margin: 0;
+  }
+  
+  
+  .offer-card .offer-card-infos {
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    position: relative;
+  }
+  
+  .offer-card-infos .offer-card-user {
+    position: absolute;
+    right: 16px;
+    top: -20px;
+    width: 40px;
+  }
