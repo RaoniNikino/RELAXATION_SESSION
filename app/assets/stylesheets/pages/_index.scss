@@ -1,43 +1,43 @@
 // Import page-specific CSS files here.
-@import "home";
+.card-offer {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  width: 450px;
+  margin: 15px;
+}
 
-.offer-card {
-    overflow: hidden;
-    background: white;
-    box-shadow: 0 0 15px rgba(0,0,0,0.2);
-    margin-bottom: 15px;
-  }
-  
-  .offer-card > img {
-    height: 200px;
-    width: 100%;
-    object-fit: cover;
-  }
-  
-  .offer-card h2 {
-    font-size: 16px;
-    font-weight: bold;
-    margin: 0;
-  }
-  
-  .offer-card p {
-    font-size: 12px;
-    opacity: .7;
-    margin: 0;
-  }
-  
-  
-  .offer-card .offer-card-infos {
-    padding: 16px;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    position: relative;
-  }
-  
-  .offer-card-infos .offer-card-user {
-    position: absolute;
-    right: 16px;
-    top: -20px;
-    width: 40px;
-  }
+.card-offer > img {
+  height: 150px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.card-offer h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-offer p {
+  font-size: 12px;
+  opacity: .7;
+  margin: 0;
+  height: 30px;
+}
+
+
+.card-offer .card-offer-infos {
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+}
+
+.card-offer-infos .card-offer-logo {
+  position: absolute;
+  right: 16px;
+  top: -20px;
+  width: 40px;
+}

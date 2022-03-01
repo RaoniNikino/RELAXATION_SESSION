@@ -4,18 +4,19 @@
       <h1>Relaxation Offers</h1>
     </div>
  </div>
-
+</div>
+<div class="d-flex">
   <% @offers.each do |offer| %>
-    <div class="offer-card">
+    <div class="card-offer">
       <img src="https://i.f1g.fr/media/madame/1900x1900_crop/sites/default/files/img/2020/03/yoga--10-comptes-instagram-a-suivre-pendant-le-confinement-et-apres.jpg" />
-        <div class="offer-card-content">
-          <div>
-            <h2><%= offer.name %></h2>
-          <p><%= offer.description %></p>
-          </div>
+      <div class="card-offer-infos">
+        <div>
+          <h2><%= offer.name %></h2>
+          <p><%= offer.category %></p>
+          <p><%= link_to 'Details', offer_path(offer) %></p>
         </div>
-        <h2 class="offer-card-pricing">£99.99</h2>
-        <%= link_to 'Details', offer_path(offer) %>
+        <h2 class="card-offer-pricing">Credit?</h2>
+        <%# <img src="/app/assets/images/Lotus.png" class="card-offer-logo avatar-bordered" /> %>
       </div>
     </div>
   <% end %>
