@@ -5,7 +5,6 @@
     </div>
  </div>
 
-
   <% @offers.each do |offer| %>
     <div class="offer-card">
       <img src="https://i.f1g.fr/media/madame/1900x1900_crop/sites/default/files/img/2020/03/yoga--10-comptes-instagram-a-suivre-pendant-le-confinement-et-apres.jpg" />
@@ -13,6 +12,8 @@
           <div>
             <h2><%= offer.name %></h2>
           <p><%= offer.description %></p>
+          <%= link_to 'Details', offer_path(offer) %>
+          </div>
         </div>
         <h2 class="offer-card-pricing">£99.99</h2>
         <%= link_to 'Details', offer_path(offer) %>
