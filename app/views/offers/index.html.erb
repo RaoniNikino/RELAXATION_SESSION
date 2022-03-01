@@ -3,24 +3,28 @@
     <div class="col-12">
       <h1>Relaxation Offers</h1>
     </div>
-  </div>
+ </div>
 
-<div class="row">
-    <% @offers.each do |offer| %>
-      <div class="col-4">
-        <div class="offer-card">
-          <div class="offer-card-content">
-            <div class="offer-card-title">
-              <h4><%= offer.name %></h4>
-            </div>
-            <p><%= offer.description %></p>
-          </div>
+
+  <% @offers.each do |offer| %>
+    <div class="offer-card">
+      <img src="https://i.f1g.fr/media/madame/1900x1900_crop/sites/default/files/img/2020/03/yoga--10-comptes-instagram-a-suivre-pendant-le-confinement-et-apres.jpg" />
+        <div class="offer-card-content">
+          <div>
+            <h2><%= offer.name %></h2>
+          <p><%= offer.description %></p>
         </div>
+        <h2 class="offer-card-pricing">£99.99</h2>
+        <%= link_to 'Details', offer_path(offer) %>
       </div>
-    <% end %>
-  </div>
+    </div>
+  <% end %>
 </div>
+
 
 <% if policy(Offer).new? %>
   <%= link_to 'New Offer', new_offer_path %>
 <% end %>
+
+
+
