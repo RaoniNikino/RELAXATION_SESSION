@@ -9,6 +9,11 @@ class OffersController < ApplicationController
     authorize @offer
   end
 
+  def show
+    @offer = Offer.find(params[:id])
+    authorize @offer
+  end
+
   def create
     @offer = Offer.new(offer_params)
     @offer.user = current_user
