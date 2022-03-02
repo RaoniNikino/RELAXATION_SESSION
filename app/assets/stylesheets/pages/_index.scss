@@ -46,3 +46,21 @@
   top: -20px;
   width: 40px;
 }
+
+.black_link {
+  color: black !important;
+  text-decoration: none;
+  background-color: transparent;
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+a {
+  color: white !important;
+  text-decoration: none;
+  background-color: transparent;
+  &:hover {
+    text-decoration: none;
+  }
+}
