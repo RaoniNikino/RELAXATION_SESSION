@@ -1,14 +1,19 @@
-<div class="container">
+<div class="container-show">
   <br>
-  <H3> Looking for <%= @offer.category %> ?</H3>
-  <br> <% user = @offer.user %>
-  <h1> Book your "<%= @offer.name %>" session with <%= user.first_name %> :) </h1>
+  <div class="card-product">
+    <div class="card-product-infos">
+      <H3> Looking for <%= @offer.category %> ?</H3>
+      <br> <% user = @offer.user %>
+      <h1> Book your "<%= @offer.name %>" session with <%= user.first_name %> :) </h1>
+      <br>
+      <p> Description: </p>
+      <%= @offer.description %>
+    </div>
+    <img class="card-image" style="background-image: url(<%= asset_url("#{@offer.category}")%>)" />
+  </div>
   <br>
-  <p> Description: </p>
-  <%= @offer.description %>
-  <br>
-  <br>
-  <%= link_to "back", offers_path, class: "btn btn-secondary" %>
+  <p class="text-right"><%= link_to "back", offers_path, class: "btn btn-secondary" %>
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">reserve</button></p>
 
   <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
  reserve
@@ -30,8 +35,8 @@
         <%= f.input :date %>
         <p class="text-center"><%= f.submit class: "btn btn-primary" %></p>
         <% end %>
+
       </div>
     </div>
   </div>
-</div>
 </div>
