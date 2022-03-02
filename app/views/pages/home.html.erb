@@ -2,7 +2,7 @@
   <div class="container">
     <h1>Welcome for a Relaxation Session</h1>
     <p>Relax and discover our selection of meditation, yoga and massage <span style='font-size:20px;'>&#128524;</span></p>
-    <p class="btn btn-light"><%= link_to "Discover now", offers_path%></p>
+    <p class="btn btn-light"><%= link_to "Discover now", offers_path, class:"black_link" %></p>
   </div>
 </div>
 
@@ -10,13 +10,13 @@
   <div class="justify-content-around">
     <div class="cards">
       <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_url('Meditation')%>)">
-        Meditation
+     <%= link_to "Meditation", offers_path(category: "Meditation") %>
       </div>
       <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_url('Massage')%>)">
-        Massage
+      <%= link_to "Massage", offers_path(category: "Massage") %>
       </div>
       <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_url('Yoga')%>)">
-        Yoga
+      <%= link_to "Yoga", offers_path(category: "Yoga") %>
       </div>
     </div>
   </div>
