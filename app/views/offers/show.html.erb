@@ -25,11 +25,10 @@
         </button>
       </div>
       <div class="modal-body">
-        <h4>This course will cost you <%=rand (10) %> credits, do you confirm your reservation?</h4>
+        <h4>"<%= @offer.name %>" will cost you <% credit= rand (10) %> <%= credit %> credits, do you confirm your reservation?</h4>
         <%= simple_form_for [@offer, @booking] do |f| %>
         <%= f.input :date %>
-        <%= f.submit %>
-        <%= link_to "Yes, submit my reservation", offer_bookings_path(@offer), method: :post, class: "btn btn-primary"%>
+        <p class="text-center"><%= f.submit class: "btn btn-primary" %></p>
         <% end %>
       </div>
     </div>
