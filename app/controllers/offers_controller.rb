@@ -3,6 +3,11 @@ class OffersController < ApplicationController
 
   def index
     @offers = policy_scope(Offer)
+    if params[:category]
+      @offers = Offer.where(:category => params[:category])
+    else
+      @offers = Offer.all
+    end
   end
 
   def new
