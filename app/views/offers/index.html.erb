@@ -8,7 +8,7 @@
 <div class="d-flex">
   <% @offers.each do |offer| %>
     <div class="card-offer">
-      <img src="https://i.f1g.fr/media/madame/1900x1900_crop/sites/default/files/img/2020/03/yoga--10-comptes-instagram-a-suivre-pendant-le-confinement-et-apres.jpg" />
+      <img class="center" style="background-image: url(<%= asset_url('Meditation')%>)" />
       <div class="card-offer-infos">
         <div>
           <h2><%= offer.name %></h2>
