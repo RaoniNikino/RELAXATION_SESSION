@@ -7,10 +7,16 @@
   margin: 15px;
 }
 
+.card-image {
+  background-position: center;
+  background-size: 100%;
+}
+
 .card-offer > img {
   height: 150px;
   width: 100%;
   object-fit: cover;
+  background-image: cover;
 }
 
 .card-offer h2 {

@@ -1,38 +1,39 @@
-<div class="container">
+<div class="container-show">
   <br>
-  <H3> Looking for <%= @offer.category %> ?</H3>
-  <br> <% user = @offer.user %>
-  <h1> Book your "<%= @offer.name %>" session with <%= user.first_name %> :) </h1>
+  <div class="card-product">
+    <div class="card-product-infos">
+      <H3> Looking for <%= @offer.category %> ?</H3>
+      <br> <% user = @offer.user %>
+      <h1> Book your "<%= @offer.name %>" session with <%= user.first_name %> :) </h1>
+      <br>
+      <p> Description: </p>
+      <%= @offer.description %>
+    </div>
+    <img class="card-image" style="background-image: url(<%= asset_url("#{@offer.category}")%>)" />
+  </div>
   <br>
-  <p> Description: </p>
-  <%= @offer.description %>
-  <br>
-  <br>
-  <%= link_to "back", offers_path, class: "btn btn-secondary" %>
+  <p class="text-right"><%= link_to "back", offers_path, class: "btn btn-secondary" %>
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">reserve</button></p>
 
-  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
- reserve
-</button>
-
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Reserve the selected session</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <h4>This course will cost you <%=rand (10) %> credits, do you confirm your reservation?</h4>
-        <%= simple_form_for [@offer, @booking] do |f| %>
-        <%= f.input :date %>
-        <%= f.submit %>
-        <%= link_to "Yes, submit my reservation", offer_bookings_path(@offer), method: :post, class: "btn btn-primary"%>
-        <% end %>
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Reserve the selected session</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <h4>This course will cost you <%=rand (10) %> credits, do you confirm your reservation?</h4>
+          <%= simple_form_for [@offer, @booking] do |f| %>
+          <%= f.input :date %>
+          <%= f.submit %>
+          <%= link_to "Yes, submit my reservation", offer_bookings_path(@offer), method: :post, class: "btn btn-primary"%>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>
-</div>
 </div>

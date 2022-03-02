@@ -8,7 +8,7 @@
 <div class="d-flex">
   <% @offers.each do |offer| %>
     <div class="card-offer">
-      <img class="center" style="background-image: url(<%= asset_url('Meditation')%>)" />
+      <img class="card-image" style="background-image: url(<%= asset_url("#{offer.category}")%>)" />
       <div class="card-offer-infos">
         <div>
           <h2><%= offer.name %></h2>
@@ -22,6 +22,7 @@
   <% end %>
 </div>
 
+<%# <%= cl_image_tag("ztnkrmzqu19ajdejyxyb", width: 400, height: 300, crop: :fill)%>
 
 <% if policy(Offer).new? %>
   <%= link_to 'New Offer', new_offer_path %>
