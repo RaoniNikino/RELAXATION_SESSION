@@ -4,13 +4,27 @@
   <br>
   <h2>My reservations</h2>
   <br>
-  <ul>
-  <% @bookings.each do |booking| %>
-    <% the_offer = booking.offer %>
-    <% the_user = the_offer.user %>
-    <li>Your <%= the_offer.name %> Session with <%= the_user.first_name %> is booked on <%= booking.date.strftime("%d-%m-%Y") %></li>
-  <% end  %>
-  </ul>
-  <br>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">Date</th>
+        <th scope="col">Session</th>
+        <th scope="col">Professor</th>
+        <th scope="col">Edit</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @bookings.each do |booking| %>
+      <% the_offer = booking.offer %>
+      <% the_user = the_offer.user %>
+      <tr>
+        <th scope="row"><%= booking.date.strftime("%d-%m-%Y") %></th>
+        <td><%= the_offer.name %></td>
+        <td><%= the_user.first_name %></td>
+      </tr>
+      <% end  %>
+    </tbody>
+  </table>
+
   <%= link_to "back", offers_path, class: "btn btn-secondary" %>
 </div>
