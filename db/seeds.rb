@@ -11,18 +11,24 @@
 
 require "open-uri"
 
-puts "Cleaning database..."
+Booking.destroy_all
+Offer.destroy_all
 User.destroy_all
 
-puts "Creating users..."
-adrianne = { first_name: "Adrianne", last_name: "Michler", email: "test@gmail.com", password: "123456" }
-med = { first_name: "Med", last_name: "Itation", email: "test2@gmail.com", password: "123456" }
-sara = { first_name: "Sara", last_name: "Clark", email: "test3@gmail.com", password: "123456" }
+adrianne = URI.open('https://res.cloudinary.com/dhecvnpeh/image/upload/v1646321912/development/Adrianne_keacfw.jpg')
+user = User.create(first_name: "Adrianne", last_name: "Michler", email: "test@gmail.com", password: "123456")
+user.photo.attach(io: adrianne, filename: 'adrianne.png', content_type: 'image/png')
+puts "Created Adrianne"
 
-[adrianne, med, sara].each do |attributes|
-  user = User.create!(attributes)
-  puts "Created #{user.first_name}"
-end
+bob = URI.open('https://res.cloudinary.com/dhecvnpeh/image/upload/v1646321917/development/Bob_j3hdaw.jpg')
+user = User.create(first_name: "Bob", last_name: "Feelgood", email: "test2@gmail.com", password: "123456")
+user.photo.attach(io: bob, filename: 'bob.png', content_type: 'image/png')
+puts "Created Bob"
+
+sara = URI.open('https://res.cloudinary.com/dhecvnpeh/image/upload/v1646321917/development/Bob_j3hdaw.jpg')
+user = User.create(first_name: "Sara", last_name: "Clark", email: "test3@gmail.com", password: "123456")
+user.photo.attach(io: sara, filename: 'sara.png', content_type: 'image/png')
+puts "Created Sara"
 
 puts "Creating offers..."
 
@@ -39,6 +45,6 @@ puts "Created meditation"
 cool_massage = URI.open('https://res.cloudinary.com/dhecvnpeh/image/upload/v1646304771/development/cool_kcuqwh.jpg')
 offer = Offer.create(name: "Cool Massage", category: "Massage", description: "Massage is the rubbing and kneading of muscles and joints of the body with the hands, especially to relieve tension or pain", user: User.all.sample)
 offer.photo.attach(io: cool_massage, filename: 'cool massage.png', content_type: 'image/png')
-puts "Created maggage"
+puts "Created massage"
 
 puts "Finished!"

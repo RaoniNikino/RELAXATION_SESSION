@@ -1,5 +1,7 @@
 <div class="container">
+  <br>
   <h1 class="text-center">My profile</h1>
+  <div><%= cl_image_tag current_user.photo.key, height: 150, width: 150, crop: :fill, radius: :max, background: "#F4F4F4" %></div>
 </div>
 
 <div class="container">
@@ -20,12 +22,10 @@
       </thead>
       <tbody>
         <% @bookings.each do |booking| %>
-        <% the_offer = booking.offer %>
-        <% the_user = the_offer.user %>
         <tr>
           <th scope="row"><%= booking.date.strftime("%d-%m-%Y") %></th>
-          <td><%= the_offer.name %></td>
-          <td><%= the_user.first_name %></td>
+          <td><%= booking.offer.name %></td>
+          <td><%= booking.offer.user.first_name %></td>
           <td><%= link_to 'delete', booking_path(booking), method: :delete, data: { confirm: "Are you sure to cancel your reservation?"}, class: "btn btn-secondary"%>
               <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#exampleModal">update</button></p>
 
