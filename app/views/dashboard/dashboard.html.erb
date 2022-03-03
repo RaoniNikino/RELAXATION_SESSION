@@ -4,51 +4,51 @@
   <br>
   <h2>My reservations</h2>
   <br>
-  <table class="table table-hover">
-    <thead>
-      <tr>
-        <th scope="col">Date</th>
-        <th scope="col">Session</th>
-        <th scope="col">Professor</th>
-        <th scope="col">Edit</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @bookings.each do |booking| %>
-      <% the_offer = booking.offer %>
-      <% the_user = the_offer.user %>
-      <tr>
-        <th scope="row"><%= booking.date.strftime("%d-%m-%Y") %></th>
-        <td><%= the_offer.name %></td>
-        <td><%= the_user.first_name %></td>
-        <td><%= link_to 'delete', booking_path(booking), method: :delete, data: { confirm: "Are you sure to cancel your reservation?"}, class: "btn btn-secondary"%>
-            <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#exampleModal">update</button></p>
+  <div class="container">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th scope="col">Date</th>
+          <th scope="col">Session</th>
+          <th scope="col">Professor</th>
+          <th scope="col">Edit</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @bookings.each do |booking| %>
+        <% the_offer = booking.offer %>
+        <% the_user = the_offer.user %>
+        <tr>
+          <th scope="row"><%= booking.date.strftime("%d-%m-%Y") %></th>
+          <td><%= the_offer.name %></td>
+          <td><%= the_user.first_name %></td>
+          <td><%= link_to 'delete', booking_path(booking), method: :delete, data: { confirm: "Are you sure to cancel your reservation?"}, class: "btn btn-secondary"%>
+              <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#exampleModal">update</button></p>
 
-            <!-- Modal -->
-            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-              <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Update your rdv date</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-                  </div>
-                  <div class="modal-body">
-                    <%= simple_form_for(booking) do |f| %>
-                      <%= f.input :date %>
-                      <%= f.submit class: "btn btn-primary text-center" %>
-                    <% end %>
+              <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">Update your rdv date</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <%= simple_form_for(booking) do |f| %>
+                        <%= f.input :date %>
+                        <%= f.submit class: "btn btn-primary text-center" %>
+                      <% end %>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-
-        </td>
-      </tr>
-      <% end  %>
-    </tbody>
-  </table>
+          </td>
+        </tr>
+        <% end  %>
+      </tbody>
+    </table>
+  </div>
 
   <%= link_to "back", offers_path, class: "btn btn-secondary" %>
 </div>

@@ -26,7 +26,7 @@ end
 
 puts "Creating offers..."
 
-yoga_camp = URI.open('https://res.cloudinary.com/dhecvnpeh/image/upload/v1646304783/development/Yogacamp_b3lwgr.jpg')
+yoga_camp = URI.open('https://res.cloudinary.com/dhecvnpeh/image/upload/v1646317779/development/Yogacamp_hu6tgk.jpg')
 offer = Offer.create(name: "Yoga Camp", category: "Yoga", description: "Yoga offers up a way for us to see a world that is working for you instead of against you. Yoga reminds me that everything is connected so we must live, act, breathe with awareness.", user: User.all.sample)
 offer.photo.attach(io: yoga_camp, filename: 'yogacamp.png', content_type: 'image/png')
 puts "Created yoga"
