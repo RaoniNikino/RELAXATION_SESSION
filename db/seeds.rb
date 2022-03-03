@@ -15,8 +15,8 @@ puts "Cleaning database..."
 User.destroy_all
 
 puts "Creating users..."
-adrianne =  { first_name: "Adrianne", last_name: "Michler", email: "test@gmail.com", password: "123456" }
-med =  { first_name: "Med", last_name: "Itation", email: "test2@gmail.com", password: "123456" }
+adrianne = { first_name: "Adrianne", last_name: "Michler", email: "test@gmail.com", password: "123456" }
+med = { first_name: "Med", last_name: "Itation", email: "test2@gmail.com", password: "123456" }
 sara = { first_name: "Sara", last_name: "Clark", email: "test3@gmail.com", password: "123456" }
 
 [ adrianne, med, sara ].each do |attributes|
