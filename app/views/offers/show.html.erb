@@ -8,12 +8,16 @@
       <br>
       <p> Description: </p>
       <%= @offer.description %>
+      <div>
+        <br>
+        <p class="text-right d-flex justify-content-around"><%= link_to "back", offers_path, class: "btn btn-secondary" %>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">reserve</button></p>
+      </div>
     </div>
-    <img class="card-image" style="background-image: url(<%= asset_url("#{@offer.category}")%>)" />
+    <img class="card-image" style="background-image: url('<%= cl_image_path @offer.photo.key, height: 300, width: 400, crop: :fill %>')" />
+
   </div>
-  <br>
-  <p class="text-right"><%= link_to "back", offers_path, class: "btn btn-secondary" %>
-  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">reserve</button></p>
+</div>
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
