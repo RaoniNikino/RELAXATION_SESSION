@@ -1,6 +1,12 @@
 <div class="container">
+  <h1 class="text-center">My profile</h1>
+  <% offer = @offer(id:)  %>
+  <img class="card-image" style="background-image: url('<%= cl_image_tag offer.photo.key, height: 300, crop: :fill %>')" />
+</div>
+
+<div class="container">
   <br>
-  <h1 class="text-center">Welcome to the dashboard</h1>
+  <h1 class="text-center">My dashboard</h1>
   <br>
   <h2>My reservations</h2>
   <br>
