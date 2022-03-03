@@ -1,12 +1,17 @@
 <div class="container">
   <br>
   <h1 class="text-center">My profile</h1>
-  <div><%= cl_image_tag current_user.photo.key, height: 150, width: 150, crop: :fill, radius: :max, background: "#F4F4F4" %></div>
+  <div class="row col-3">
+    <div class="d-flex">
+      <div class="p-4"><%= cl_image_tag current_user.photo.key, height: 150, width: 150, crop: :fill, radius: :max, background: "#F4F4F4" %></div>
+      <div class="p-4">
+        <h2><%= current_user.first_name %> <%= current_user.last_name %></h2>
+      </div>
+    </div>
+  </div>
 </div>
 
 <div class="container">
-  <br>
-  <h1 class="text-center">My dashboard</h1>
   <br>
   <h2>My reservations</h2>
   <br>
