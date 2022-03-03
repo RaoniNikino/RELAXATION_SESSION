@@ -5,8 +5,16 @@ class OffersController < ApplicationController
     @offers = policy_scope(Offer)
     if params[:category]
       @offers = Offer.where(category: params[:category])
-    else
-      @offers = Offer.all
+      elsif params[:query].present?
+              sql_query = " \
+        offers.name ILIKE :query \
+        OR users.first_name ILIKE :query \
+        OR users.last_name ILIKE :query \
+      "
+      @offers = Offer.joins(:user).where(sql_query, query: "%#{params[:query]}%")
+
+      else
+        @offers = Offer.all
     end
   end
 
