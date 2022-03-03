@@ -1,11 +1,11 @@
-<div class="container mt-3">
+<div class="container">
   <div class="row">
     <div class="col-12">
       <h1 class="text-center">Relaxation Offers</h1>
     </div>
  </div>
 </div>
-<div class="d-flex">
+<div class="row justify-content-center">
   <% @offers.each do |offer| %>
     <div class="card-offer">
       <img class="card-image" style="background-image: url(<%= asset_url("#{offer.category}")%>)" />
