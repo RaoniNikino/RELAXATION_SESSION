@@ -3,6 +3,15 @@
     <h1>Welcome for a Relaxation Session</h1>
     <p>Relax and discover our selection of meditation, yoga and massage <span style='font-size:20px;'>&#128524;</span></p>
     <p class="btn btn-light"><%= link_to "Discover now", offers_path, class:"black_link" %></p>
+    <br>
+      <%= form_tag offers_path, method: :get do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "Search by the name of professor or the name of the activity"
+      %>
+      <%= submit_tag "Search", class: "btn btn-secondary" %>
+      <% end %>
   </div>
 </div>
 
