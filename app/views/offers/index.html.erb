@@ -9,7 +9,9 @@
 <div class="row justify-content-center">
   <% @offers.each do |offer| %>
     <div class="card-offer">
-      <img class="card-image" style="background-image: url('<%= cl_image_tag offer.photo.key, height: 300, crop: :fill %>
+      <div class="card-image">
+        <%= cl_image_tag offer.photo.key, height: 150, width: 500, crop: :fill %>
+      </div>
       <div class="card-offer-infos">
         <div>
           <h2><%= offer.name %></h2>
