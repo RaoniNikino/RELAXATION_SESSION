@@ -1,10 +1,12 @@
 <div class="container">
   <br>
   <h1 class="text-center">Your offer</h1>
-  <%= simple_form_for @offer do |f| %>
-    <%= f.input :category %>
-    <%= f.input :name %>
-    <%= f.input :description %>
-    <%= f.submit "Confirm", class: "btn btn-primary" %> <%= link_to "back", offers_path, class: "btn btn-secondary" %>
-  <% end %>
+  <div>
+    <%= simple_form_for @offer do |f| %>
+      <%= f.input :category %>
+      <%= f.input :name %>
+      <%= f.input :description %>
+      <%= f.submit "Confirm", class: "btn btn-primary" %> <%= link_to "back", offers_path, class: "btn btn-secondary" %>
+    <% end %>
+  </div>
 </div>
