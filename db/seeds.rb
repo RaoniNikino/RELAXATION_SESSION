@@ -25,7 +25,7 @@ user = User.create(first_name: "Bob", last_name: "Feelgood", email: "test2@gmail
 user.photo.attach(io: bob, filename: 'bob.png', content_type: 'image/png')
 puts "Created Bob"
 
-sara = URI.open('https://res.cloudinary.com/dhecvnpeh/image/upload/v1646321917/development/Bob_j3hdaw.jpg')
+sara = URI.open('https://res.cloudinary.com/dhecvnpeh/image/upload/v1646321922/development/sara_esf2gc.jpg')
 user = User.create(first_name: "Sara", last_name: "Clark", email: "test3@gmail.com", password: "123456")
 user.photo.attach(io: sara, filename: 'sara.png', content_type: 'image/png')
 puts "Created Sara"
