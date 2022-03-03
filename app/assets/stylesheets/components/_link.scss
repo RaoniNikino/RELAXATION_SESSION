@@ -1,0 +1,27 @@
+.black_link {
+  color: black !important;
+  text-decoration: none;
+  background-color: transparent;
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+a {
+  color: white !important;
+  text-decoration: none;
+  background-color: transparent;
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.grey_link {
+  color: grey !important;
+  text-decoration: none;
+  background-color: transparent;
+  &:hover {
+    text-decoration: none;
+    color: black !important;
+  }
+}
