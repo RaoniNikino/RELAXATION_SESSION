@@ -5,6 +5,6 @@ Rails.application.routes.draw do
   resources :offers do
     resources :bookings, only: [:create]
   end
-  resources :bookings, only: [:delete, :update]
+  resources :bookings, only: [:destroy, :edit, :update]
   get "dashboard", to: "dashboard#dashboard"
 end
