@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-12">
       <br>
-      <h1 class="text-center">Relaxation Offers</h1>
+      <h1 class="text-left">Discover our Offers</h1>
     </div>
  </div>
 </div>
@@ -14,19 +14,18 @@
       </div>
       <div class="card-offer-infos">
         <div>
-          <h2><%= offer.name %></h2>
-          <p><%= offer.category %></p>
-          <p class="btn btn-light"><%= link_to 'Details', offer_path(offer), class:"black_link" %></p>
+          <h2 style="font-size: 20px;"><%= offer.name %></h2>
+          <p style="font-size: 15px;"><%= offer.category %></p>
+          <p class="btn btn-light" style="font-size: 12px;"><%= link_to 'Details', offer_path(offer), class:"black_link" %></p>
         </div>
         <h2 class="card-offer-pricing">Credit?</h2>
-        <%# <img src="/app/assets/images/Lotus.png" class="card-offer-logo avatar-bordered" /> %>
       </div>
     </div>
   <% end %>
 </div>
-
-<%# <%= cl_image_tag("ztnkrmzqu19ajdejyxyb", width: 400, height: 300, crop: :fill)%>
-
-<%# <% if policy(Offer).new? %>
-  <%# <%= link_to 'New Offer', new_offer_path %>
-<%# <% end %>
+<div style="display: flex; justify-content: space-between; margin: 15px;">
+  <p class="text-left"><%= link_to "back", root_path, class: "btn btn-secondary", style:"font-size: 20px; padding-left: 20px; padding-right: 20px;" %>
+  <% if policy(Offer).new? %>
+  <p class="btn btn-light" style="font-size: 20px; padding-left: 20px; padding-right: 20px;"><%= link_to 'New Offer', new_offer_path, class:"black_link" %></p>
+  <% end %>
+</div>

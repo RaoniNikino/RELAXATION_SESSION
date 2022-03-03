@@ -25,3 +25,12 @@ a {
     color: black !important;
   }
 }
+
+.white_link {
+  color: white !important;
+  text-decoration: none;
+  background-color: transparent;
+  &:hover {
+    text-decoration: none;
+  }
+}

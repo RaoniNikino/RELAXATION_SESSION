@@ -1,7 +1,7 @@
 .banner {
   background-size: cover;
   background-position: center;
-  padding: 130px 0;
+  padding: 85px 0;
 }
 
 .banner h1 {
@@ -17,4 +17,9 @@
   color: white;
   opacity: .7;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+.container-search {
+  margin-bottom: -60px;
+  margin-top: 50px;
 }
