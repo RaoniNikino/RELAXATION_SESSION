@@ -37,7 +37,7 @@
       <div class="modal-body">
         <h4>"<%= @offer.name %>" will cost you <% credit= rand (10) %> <%= credit %> credits, do you confirm your reservation?</h4>
         <%= simple_form_for [@offer, @booking] do |f| %>
-        <%= f.input :date %>
+        <%= f.input :date, as: :string, required: false, input_html: {class: "datepicker"} %>
         <p class="text-center"><%= f.submit class: "btn btn-secondary" %></p>
         <% end %>
 
