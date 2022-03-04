@@ -1,22 +1,30 @@
-<div class="container-show">
+<div class="container-show" style="padding: 20px;">
+  <h1 style="padding-left: 80px;">You will love this selection</h1>
   <br>
   <div class="card-product">
-    <div class="card-product-infos">
-      <H3> Looking for <%= @offer.category %> ?</H3>
-      <br> <% user = @offer.user %>
-      <h1> Book your "<%= @offer.name %>" session with <%= user.first_name %> :) </h1>
+    <div class="card-product-infos" style="font-size: 17px;">
+      <h3 class="text-center"> Book your <%= @offer.category %> Session now!</h3>
       <br>
-      <p> Description: </p>
+      <h3 class="text-center"> Discover the "<%= @offer.name %>" created by <%= @offer.user.first_name %></h3>
+      <br>
+      <h2 style="font-size: 20px;"> Description: </h2>
       <%= @offer.description %>
-      <div>
+      <br>
+      <br>
+      <br>
+      <div style="display: flex; justify-content: center;">
         <br>
-        <p class="text-right d-flex justify-content-around"><%= link_to "back", offers_path, class: "btn btn-secondary" %>
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">reserve</button></p>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" style="font-size: 20px;">reserve</button></p>
       </div>
     </div>
     <img class="card-image" style="background-image: url('<%= cl_image_path @offer.photo.key, height: 300, width: 400, crop: :fill %>')" />
-
   </div>
+  <br>
+  <div style="display: flex; justify-content: space-between; margin: 15px;">
+  <p class="text-left"><%= link_to "back", offers_path, class: "btn btn-secondary", style:"font-size: 20px; padding-left: 20px; padding-right: 20px;" %>
+  <% if policy(Offer).destroy? %>
+  <p class="btn btn-light" style="font-size: 20px; padding-left: 20px; padding-right: 20px;"><%= link_to 'Delete offer', offer_path(@offer), method: :delete, data: { confirm: "Are you sure you want to delete this offer?"}, class:"black_link" %></p>
+  <% end %>
 </div>
 
 <!-- Modal -->

@@ -1,17 +1,21 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= asset_url('Bienetre')%>)">
   <div class="container">
-    <h1>Welcome for a Relaxation Session</h1>
-    <p>Relax and discover our selection of meditation, yoga and massage <span style='font-size:20px;'>&#128524;</span></p>
-    <p class="btn btn-light"><%= link_to "Discover now", offers_path, class:"black_link" %></p>
-    <br>
-      <%= form_tag offers_path, method: :get do %>
+    <div>
+      <h1>Welcome for a Relaxation Session</h1>
+      <p>Relax and discover our selection of meditation, yoga and massage <span style='font-size:20px;'>&#128524;</span></p>
+      <br>
+      <p class="btn btn-light"><%= link_to "Discover now", offers_path, class:"black_link" %></p>
+    </div>
+    <div class="container-search">
+      <%= form_tag offers_path, class:"d-flex my-4", method: :get do %>
       <%= text_field_tag :query,
         params[:query],
         class: "form-control",
         placeholder: "Search your session, your activity or your professor"
       %>
-      <%= submit_tag "Search", class: "btn btn-secondary" %>
+      <%= submit_tag "Search", class: "btn btn-secondary px-5" %>
       <% end %>
+    </div>
   </div>
 </div>
 

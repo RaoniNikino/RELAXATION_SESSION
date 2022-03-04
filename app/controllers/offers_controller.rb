@@ -41,9 +41,16 @@ class OffersController < ApplicationController
     end
   end
 
+  def destroy
+    @offer = Offer.find(params[:id])
+    @offer.destroy
+    authorize @offer
+    redirect_to offers_path
+  end
+
   private
 
   def offer_params
-    params.require(:offer).permit(:name, :category, :description, :user_id, :photo)
+    params.require(:offer).permit(:name, :category, :description, :user_id, :photo, :address)
   end
 end
