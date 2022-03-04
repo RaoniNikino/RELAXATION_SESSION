@@ -3,7 +3,7 @@
   <h1 class="text-center">Your offer</h1>
   <div>
     <div class="container col-8">
-      <%= simple_form_for @offer do |f| %>
+      <%= simple_form_for @offer, remote: true do |f| %>
         <%= f.input :category, collection: ["Meditation", "Massage", "Yoga"]%>
         <%= f.input :name, placeholder: 'ex: 5 minutes yoga' %>
         <%= f.input :description %>
