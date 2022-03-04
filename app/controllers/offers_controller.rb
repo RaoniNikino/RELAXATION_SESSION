@@ -8,6 +8,7 @@ class OffersController < ApplicationController
       elsif params[:query].present?
               sql_query = " \
         offers.name ILIKE :query \
+        OR offers.category ILIKE :query \
         OR users.first_name ILIKE :query \
         OR users.last_name ILIKE :query \
       "
