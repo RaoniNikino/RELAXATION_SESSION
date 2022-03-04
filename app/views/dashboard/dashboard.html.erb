@@ -4,7 +4,7 @@
   <br>
   <div class="row col-3">
     <div class="d-flex">
-      <div class="p-1 col-6"><%= cl_image_tag current_user.photo.key, height: 150, width: 150, crop: :fill, radius: :max, background: "#FDFADF" %></div>
+      <div class="p-1 col-6"><%= cl_image_tag current_user.photo.key, height: 150, width: 150, crop: :fill, radius: :max, background: "#f8edeb" %></div>
       <div class="p-5">
         <h3><%= current_user.first_name %></h3>
         <h3><%= current_user.last_name %></h3>
@@ -14,7 +14,7 @@
   </div>
 </div>
 
-<div class="container col-12" style="background-color: white;">
+<div class="container col-10" style="background-color: white;">
   <div class="container col-10">
     <br>
     <h2>My reservations</h2>
@@ -60,7 +60,7 @@
       </tbody>
     </table>
     <br>
-    <%= link_to "back", offers_path, class: "btn btn-secondary" %>
+    <%= link_to "back", offers_path, class: "btn btn-secondary", style:"font-size: 20px; padding-left: 20px; padding-right: 20px" %>
     <br>
     <br>
   </div>
