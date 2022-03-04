@@ -40,6 +40,18 @@ class OffersController < ApplicationController
     end
   end
 
+  def edit
+    @offer = Offer.find(params[:id])
+    authorize @offer
+  end
+
+  def update
+    @offer = Offer.find(params[:id])
+    @offer.update(offer_params)
+    authorize @offer
+    redirect_to dashboard_path
+  end
+
   def destroy
     @offer = Offer.find(params[:id])
     @offer.destroy
