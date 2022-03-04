@@ -22,9 +22,10 @@
     <table class="table table-responsive-xl table-hover">
       <thead>
         <tr>
-          <th scope="col" style="width: 250px;">Date</th>
+          <th scope="col">Date</th>
           <th scope="col">Session</th>
           <th scope="col">Professor</th>
+          <th scope="col">Address</th>
           <th scope="col" style="width: 250px; text-align: center;">Edit</th>
         </tr>
       </thead>
@@ -34,6 +35,7 @@
           <th scope="row" style="vertical-align: middle;"><%= booking.date.strftime("%d-%m-%Y")%></th>
           <td style="vertical-align: middle;"><%= booking.offer.name %></td>
           <td style="vertical-align: middle;"><%= booking.offer.user.first_name %></td>
+          <td style="vertical-align: middle;"><%= booking.offer.address %></td>
           <td style="display: flex; justify-content: space-evenly;"><%= link_to 'delete', booking_path(booking), method: :delete, data: { confirm: "Are you sure to cancel your reservation?"}, style:'padding-left: 20px; padding-right: 20px', class: "btn btn-secondary"%> <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#exampleModal" style="padding-left: 20px; padding-right: 20px">update</button>
 
               <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
