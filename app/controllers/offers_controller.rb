@@ -8,6 +8,7 @@ class OffersController < ApplicationController
     elsif params[:query].present?
       sql_query = " \
         offers.name ILIKE :query \
+        OR offers.category ILIKE :query \
         OR users.first_name ILIKE :query \
         OR users.last_name ILIKE :query \
         Or offers.address ILIKE :query \
@@ -15,6 +16,13 @@ class OffersController < ApplicationController
       @offers = Offer.joins(:user).where(sql_query, query: "%#{params[:query]}%")
     else
       @offers = Offer.all
+    end
+    @markers = @offers.geocoded.map do |offer|
+      {
+        lat: offer.latitude,
+        lng: offer.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { offer: offer })
+      }
     end
   end
 
