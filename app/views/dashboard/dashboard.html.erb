@@ -50,7 +50,7 @@
                       </div>
                       <div class="modal-body">
                         <%= simple_form_for(booking) do |f| %>
-                          <%= f.input :date %>
+                          <%= f.input :date, as: :string, required: false, input_html: {class: "datepicker"} %>
                           <%= f.submit class: "btn btn-primary text-center" %>
                         <% end %>
                       </div>
